@@ -2,7 +2,7 @@ import inspect
 import torch 
 from Quantization.Quantizer.rounding import grad_estimator
 from Quantization.Quantizer.quantizer_base import QuantizerBase
-
+from utils import ClassEnumOptions, MethodMap
 class AsymmetricUniformQuantizer(QuantizerBase):
     """
     Asymmetric uniform quantizer     
@@ -36,10 +36,8 @@ class AsymmetricUniformQuantizer(QuantizerBase):
         assert scale_domain in ["linear", "log"], "scale_domain must be 'linear' or 'log'"
         self.scale_domain = scale_domain
         self.eps = eps
-        
         self.register_buffer("_delta", None)
         self.register_buffer("_zero_float", None)
-
         self.discretizer = grad_estimator(discretizer, *discretizer_args)
 
 
@@ -253,3 +251,11 @@ class SymmetricUniformQuantizer(QuantizerBase):
         eps = 1e-8,
         **kwargs
     ): raise NotImplementedError("SymmetricUniformQuantizer is not implemented yet")
+
+class QuantizationMethod(ClassEnumOptions):
+    """
+    Quantization methods for neural network weights.
+    Options : [Asymmetric, Symmetric]
+    """
+    Asymmetric = MethodMap(AsymmetricUniformQuantizer)
+    Symmetric = MethodMap(SymmetricUniformQuantizer)

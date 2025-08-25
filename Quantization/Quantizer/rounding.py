@@ -2,6 +2,7 @@ from torch import nn
 import torch
 from torch.autograd import Function
 from functools import partial
+from utils import ClassEnumOptions, MethodMap
 # 2 Method of estimating gradients in QAT
 
 
@@ -43,6 +44,7 @@ class EWGSRounding(Function):
         scale = 1 + delta * torch.sign(g) * diff
         # Trả về gradient đã scale. `None` cho các đối số không cần gradient (scaling_factor)
         return g * scale, None
+
 
 def grad_estimator(method: str, *args, **kwargs):
     """

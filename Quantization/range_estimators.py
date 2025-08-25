@@ -6,7 +6,7 @@ import torch
 from torch import nn
 from scipy.optimize import minimize_scalar
 
-from utils import to_numpy
+from utils import to_numpy, MethodMap, ClassEnumOptions
 
 class RangeEstimatorBase(nn.Module):
     def __init__(self, per_channel=False, quantizer=None, *args, **kwargs):
@@ -286,3 +286,12 @@ def range_estimator(method: str, *args, **kwargs) -> RangeEstimatorBase:
         return MSE_Estimator(*args, **kwargs)
     else:
         raise ValueError(f"Unknown range estimator method: {method}")
+
+class RangeEstimator(ClassEnumOptions):
+    """
+    Base class for range estimators.
+    options: [CurrentMinMax, RunningMinMax, MSE]
+    """
+    CurrentMinMax = MethodMap(CurrentMinMaxEstimator)
+    RunningMinMax = MethodMap(RunningMinMaxEstimator)
+    MSE = MethodMap(MSE_Estimator)

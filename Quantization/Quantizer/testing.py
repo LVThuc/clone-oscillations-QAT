@@ -1,8 +1,8 @@
 import unittest
 import torch
 
-from Quantizer.uniform_quantizers import AsymmetricUniformQuantizer
-from Quantizer.rounding import grad_estimator, STERounding, EWGSRounding
+from Quantization.Quantizer.uniform_quantizers import AsymmetricUniformQuantizer
+from Quantization.Quantizer.rounding import grad_estimator, STERounding, EWGSRounding
 
 
 class TestRounding(unittest.TestCase):

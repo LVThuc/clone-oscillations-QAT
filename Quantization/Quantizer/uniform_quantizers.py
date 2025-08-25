@@ -1,7 +1,7 @@
 import inspect
 import torch 
-from Quantizer.rounding import grad_estimator
-from Quantizer.quantizer_base import QuantizerBase
+from Quantization.Quantizer.rounding import grad_estimator
+from Quantization.Quantizer.quantizer_base import QuantizerBase
 
 class AsymmetricUniformQuantizer(QuantizerBase):
     """

@@ -53,10 +53,10 @@ class QuantizedModule(nn.Module):
         scale_domain="linear",
         act_quant_kwargs={},
         weight_quant_kwargs={},
-        weight_discretizer=grad_estimator("STE"),
+        weight_discretizer="EWGS",
         act_discretizer=grad_estimator("STE"),
         act_discretizer_args=tuple(),
-        weight_discretizer_args=tuple(),
+        weight_discretizer_args=tuple([0.2]),
         quantize_input=False,
         **kwargs
     ):

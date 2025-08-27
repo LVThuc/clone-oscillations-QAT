@@ -1,4 +1,5 @@
 import inspect
+from queue import Empty
 import torch 
 from Quantization.Quantizer.rounding import grad_estimator
 from Quantization.Quantizer.quantizer_base import QuantizerBase
@@ -38,8 +39,12 @@ class AsymmetricUniformQuantizer(QuantizerBase):
         self.eps = eps
         self.register_buffer("_delta", None)
         self.register_buffer("_zero_float", None)
-        self.discretizer = grad_estimator(discretizer, *discretizer_args)
-
+        if isinstance(discretizer, str):
+            self.discretizer = grad_estimator(discretizer, *discretizer_args)
+        elif len(discretizer_args) > 0:
+            self.discretizer = discretizer(*discretizer_args)
+        else:
+            self.discretizer = discretizer
 
     # Debugging property
     @property

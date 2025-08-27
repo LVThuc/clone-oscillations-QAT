@@ -1,10 +1,20 @@
-from tkinter import Y
 from sympy import Range
-from Quantization.range_estimators import RangeEstimator, RangeEstimatorBase
+from Quantization.base_quantized_classes import QuantizedModule, QuantizedActivation
 
-X = RangeEstimator.CurrentMinMax
-Y = RangeEstimator.RunningMinMax.cls
-Z = RangeEstimator.CurrentMinMax()
-print(X)
-print(Y)
-print(Z)
+import torch
+import torch.nn as nn
+
+x = torch.randn(4, 8)
+
+N = QuantizedActivation(n_bits = 1)
+print(N)
+y_fp32 = N(x)
+print("Output (FP32):", y_fp32.shape)
+print(x)
+assert(torch.equal(y_fp32, x))
+
+N.quantized_acts()
+print("Quantizer status sau khi bật:", N.get_quantizer_status())
+y_quant = N(x)
+print(y_quant)
+print("Output (Quantized):", y_quant.shape)

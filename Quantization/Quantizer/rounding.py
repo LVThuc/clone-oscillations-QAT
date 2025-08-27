@@ -44,7 +44,34 @@ class EWGSRounding(Function):
         scale = 1 + delta * torch.sign(g) * diff
         # Trả về gradient đã scale. `None` cho các đối số không cần gradient (scaling_factor)
         return g * scale, None
+### EWGS ko truyền được như STE mà phải có một Param holder 
+class ParametrizedGradEstimatorBase(nn.Module):
+    def __init__(self, *args, **kwargs):
+        super().__init__()
+        self._trainable = False
 
+    def make_grad_params_trainable(self):
+        self._trainable = True
+        for name, buf in self.named_buffers(recurse=False):
+            setattr(self, name, torch.nn.Parameter(buf))
+
+    def make_grad_params_tensor(self):
+        self._trainable = False
+        for name, param in self.named_parameters(recurse=False):
+            cur_value = param.data
+            delattr(self, name)
+            self.register_buffer(name, cur_value)
+
+    def forward(self, x):
+        raise NotImplementedError()
+
+class EWGSDiscretizer(ParametrizedGradEstimatorBase):
+    def __init__(self, scaling_factor=0.2):
+        super().__init__()
+        self.register_buffer("scaling_factor", torch.tensor(scaling_factor))
+
+    def forward(self, x):
+        return EWGSRounding.apply(x, self.scaling_factor)
 
 def grad_estimator(method: str, *args, **kwargs):
     """
@@ -58,6 +85,6 @@ def grad_estimator(method: str, *args, **kwargs):
         # Sử dụng partial để tạo một hàm mới với scaling_factor đã được cung cấp sẵn
         # Nếu không có args, mặc định scaling_factor = 0.2
         scaling_factor = args[0] if args else 0.2
-        return  lambda x: EWGSRounding.apply(x, scaling_factor)
+        return  EWGSDiscretizer(scaling_factor)
     else:
         raise ValueError(f"Unknown method: {method}")

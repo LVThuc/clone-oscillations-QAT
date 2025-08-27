@@ -74,7 +74,7 @@ Ví dụ sử dụng:
 
     # Tạo instance trực tiếp từ enum
     >>> Models.CONV()
-    []
+    === Models.CONV.cls()
 
     # Lấy danh sách tên enum
     >>> Models.list_names()

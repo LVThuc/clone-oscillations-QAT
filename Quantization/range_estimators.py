@@ -33,14 +33,23 @@ class CurrentMinMaxEstimator(RangeEstimatorBase):
     """
     Estimates the current minimum and maximum values of the input tensor.
     """
-    def __init__(self, *args, **kwargs):
+    def __init__(self,percentile=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
-    
+        self.percentile = percentile
     def forward(self, x):
         if self.per_channel:
             x = x.view(x.shape[0],-1) # Cái code này nhìn hơi lạ, per_channel nma nó lại gộp cả tensor vào?
-        self.current_xmin = x.min(-1)[0].detach() if self.per_channel else x.min().detach()
-        self.current_xmax = x.max(-1)[0].detach() if self.per_channel else x.max().detach()
+        if self.percentile:
+            axis = -1 if self.per_channel else None
+            data_np = to_numpy(x)
+            x_min, x_max = np.percentile(
+                data_np, (self.percentile, 100 - self.percentile), axis=axis
+            )
+            self.current_xmin = torch.tensor(x_min).to(x.device)
+            self.current_xmax = torch.tensor(x_max).to(x.device)
+        else:
+            self.current_xmin = x.min(-1)[0].detach() if self.per_channel else x.min().detach()
+            self.current_xmax = x.max(-1)[0].detach() if self.per_channel else x.max().detach()
         return self.current_xmin, self.current_xmax
     
 class RunningMinMaxEstimator(RangeEstimatorBase):

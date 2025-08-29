@@ -29,6 +29,9 @@ activations_set = [
 ]
 
 class QuantizationHijacker(QuantizedModule):
+    """
+    Hijack các layer ở forward pass để chèn các hàm lượng tử hóa vào weight và activation.
+    """
     def __init__(self, *args, activation: nn.Module = None, **kwargs):
 
         super().__init__(*args, **kwargs)
@@ -56,6 +59,7 @@ class QuantizationHijacker(QuantizedModule):
             per_channel=self.per_channel_weights,
             range_estim_params=weight_init_params,
         )
+    #Ham này quantize weight nè .
     def get_params(self):
 
         weight, bias = self.get_weight_bias()

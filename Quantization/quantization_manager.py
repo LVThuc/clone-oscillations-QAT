@@ -31,7 +31,7 @@ class Qstates(BaseEnumOptions):
     estimate_ranges = auto()
     fix_ranges = auto()
     learn_ranges = auto()
-
+    estimate_ranges_train = auto()
 
 class QuantizationManager(nn.Module):
     """
@@ -104,7 +104,13 @@ class QuantizationManager(nn.Module):
     def n_bits(self):
 
         return self.quantizer.n_bits
-
+    
+    def fix_ranges(self):
+        if self.quantizer.is_initialized:
+            self.state = Qstates.fix_ranges
+            self.quantizer.state = self.state
+        else:
+            raise NotImplementedError("Quantizer chưa được khởi tạo range.")
     def estimate_ranges(self):
         """
         Chuyển sang chế độ estimate_ranges:
@@ -143,3 +149,6 @@ class QuantizationManager(nn.Module):
             cur_xmin, cur_xmax = self.range_estimator(x)
             self.quantizer.set_quant_range(cur_xmin, cur_xmax)
         return self.quantizer(x)
+    def estimate_ranges_train(self):
+        self.state = Qstates.estimate_ranges_train
+        self.quantizer.state = self.state

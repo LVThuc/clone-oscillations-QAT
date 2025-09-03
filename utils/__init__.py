@@ -1,2 +1,1 @@
-from .utils import *
-
+from .utils import *  # noqa: F403

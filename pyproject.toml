@@ -15,6 +15,7 @@ dependencies = [
     "timm~=0.4.12",
     "torch>=2.8.0",
     "torchvision>=0.23.0",
+    "wandb>=0.21.3",
 ]
 
 

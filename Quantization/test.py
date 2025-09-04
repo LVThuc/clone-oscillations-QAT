@@ -1,5 +1,4 @@
 from Quantization.base_quantized_classes import QuantizedActivation
-
 import torch
 
 x = torch.randn(4, 8)

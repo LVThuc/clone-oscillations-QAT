@@ -62,7 +62,7 @@ class BNQConv1d(BNFusedHijacker, nn.Conv1d):
 		)
 
 
-class BNQConv(QuantizationHijacker, nn.Conv2d):
+class BNQConv(BNFusedHijacker, nn.Conv2d):
 	def run_forward(self, x, weight, bias, offsets=None):
 		return F.conv2d(
 			x.contiguous(),
@@ -119,7 +119,7 @@ class QuantConvTranspose(QuantConvTransposeBase, nn.ConvTranspose2d):
 		)
 
 
-class BNQLinear(QuantizationHijacker, nn.Linear):
+class BNQLinear(BNFusedHijacker, nn.Linear):
 	def run_forward(self, x, weight, bias, offsets=None):
 		return F.linear(x.contiguous(), weight.contiguous(), bias=bias)
 
@@ -166,7 +166,7 @@ class QuantLayerNorm(QuantizationHijacker, nn.LayerNorm):
 		)
 
 
-class Flatterner(nn.Module):
+class Flattener(nn.Module):
 	def forward(self, x):
 		return x.view(x.shape[0], -1)  # where does this used at ?
 

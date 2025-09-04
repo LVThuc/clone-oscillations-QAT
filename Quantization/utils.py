@@ -3,8 +3,7 @@ import torch.serialization
 
 from Quantization.Quantizer import QuantizerBase
 from Quantization.Quantizer.rounding import ParametrizedGradEstimatorBase
-from Quantization.range_estimators import RangeEstimators
-from utils import StopForwardException, get_layer_by_name
+from Quantization.range_estimators import RangeEstimator
 
 
 def separate_quantized_model_params(quant_model):
@@ -68,6 +67,10 @@ def separate_quantized_model_params(quant_model):
 
 	return quant_params, model_params, grad_params
 
+def get_layer_by_name(model, layer_name):
+    for name, module in model.named_modules():
+        if name == layer_name:
+            return module
 
 def pass_data_for_range_estimation(
 	loader, model, act_quant, weight_quant, max_num_batches=20, cross_entropy_layer=None, inp_idx=0
@@ -82,7 +85,7 @@ def pass_data_for_range_estimation(
 		if layer_xent:
 			print('Set cross entropy estimator for layer "{}"'.format(cross_entropy_layer))
 			act_quant_mgr = layer_xent.activation_quantizer
-			act_quant_mgr.range_estimator = RangeEstimators.cross_entropy.cls(
+			act_quant_mgr.range_estimator = RangeEstimator.cross_entropy.cls(
 				per_channel=act_quant_mgr.per_channel,
 				quantizer=act_quant_mgr.quantizer,
 				**act_quant_mgr.range_estim_params,
@@ -108,7 +111,7 @@ def pass_data_for_range_estimation(
 
 				if i >= max_num_batches - 1 or not act_quant:
 					break
-			except StopForwardException:
+			except Exception:
 				pass
 		return batches
 

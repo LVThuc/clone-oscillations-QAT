@@ -69,7 +69,7 @@ class TestAsymmetricUniformQuantizer(unittest.TestCase):
 		self.assertEqual(quantizer.delta.shape, (1, 3, 1, 1))
 		self.assertEqual(quantizer.zero_float.shape, (1, 3, 1, 1))
 
-		x_quant = quantizer.forward(x)
+		x_quant = quantizer.forward(x)  # noqa: F841
 		# self.assertEqual(x_quant.shape, x.shape)
 
 

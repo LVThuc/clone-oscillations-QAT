@@ -1,35 +1,24 @@
 import torch
 
 
-def get_lr_scheduler(optimizer, lr_schedule, epochs):
-	scheduler = None
-	if lr_schedule:
-		if lr_schedule.startswith('multistep'):
-			epochs = [int(s) for s in lr_schedule.split(':')[1:]]
-			scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, epochs)
-		elif lr_schedule.startswith('cosine'):
-			eta_min = float(lr_schedule.split(':')[1])
-			scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-				optimizer, epochs, eta_min=eta_min
-			)
+def get_lr_scheduler(optimizer, epochs):
+	scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, epochs, eta_min=0.00001)
 	return scheduler
 
 
-def optimizer(config_optim, params, epochs):
-	if config_optim.optimizer.lower() == 'sgd':
+def get_optimizer(optimizer, params, epochs, lr, momentum, weight_decay):
+	if optimizer == 'sgd':
 		optimizer = torch.optim.SGD(
 			params,
-			lr=config_optim.learning_rate,
-			momentum=config_optim.momentum,
-			weight_decay=config_optim.weight_decay,
+			lr=lr,
+			momentum=momentum,
+			weight_decay=weight_decay,
 		)
-	elif config_optim.optimizer.lower() == 'adam':
-		optimizer = torch.optim.Adam(
-			params, lr=config_optim.learning_rate, weight_decay=config_optim.weight_decay
-		)
+	elif optimizer == 'adam':
+		optimizer = torch.optim.Adam(params, lr=lr, weight_decay=weight_decay)
 	else:
 		raise ValueError()
 
-	lr_scheduler = get_lr_scheduler(optimizer, config_optim.learning_rate_schedule, epochs)
+	lr_scheduler = get_lr_scheduler(optimizer, epochs)
 
 	return optimizer, lr_scheduler

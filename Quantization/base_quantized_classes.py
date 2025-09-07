@@ -2,8 +2,9 @@ import torch
 from torch import nn
 
 from Quantization.quantization_manager import QuantizationManager
-from Quantization.Quantizer import QuantizerBase, QuantizationMethod
-from Quantization.Quantizer import grad_estimator
+from Quantization.Quantizer.quantizer_base import QuantizerBase
+from Quantization.Quantizer.uniform_quantizers import QuantizationMethod
+from Quantization.Quantizer.rounding import grad_estimator
 from Quantization.range_estimators import RangeEstimator, RangeEstimatorBase
 
 

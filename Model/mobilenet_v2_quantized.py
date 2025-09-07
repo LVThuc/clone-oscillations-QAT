@@ -103,4 +103,4 @@ def mobilenetv2_quantized(pretrained=True, model_dir=None, load_type='fp32', **q
 	else:
 		raise ValueError('wrong load_type specified')
 
-	return quant_model
+	return fp_model, quant_model

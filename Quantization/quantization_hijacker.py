@@ -68,6 +68,9 @@ class QuantizationHijacker(QuantizedModule):
 
 		return weight, bias
 
+	def quantize_weights(self, weights):
+		return self.weight_quantizer(weights)
+
 	def run_forward(self, x, weight, bias, offsets=None):
 		# Performs the actual linear operation of the layer
 		raise NotImplementedError()

@@ -4,7 +4,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from utils import to_numpy, MethodMap, ClassEnumOptions
+from utils.utils import to_numpy, MethodMap, ClassEnumOptions
 
 
 class RangeEstimatorBase(nn.Module):

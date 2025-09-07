@@ -1,7 +1,8 @@
+from ast import Not
 import torch
 from Quantization.Quantizer.rounding import grad_estimator
 from Quantization.Quantizer.quantizer_base import QuantizerBase
-from utils import ClassEnumOptions, MethodMap
+from utils.utils import ClassEnumOptions, MethodMap
 
 
 class AsymmetricUniformQuantizer(QuantizerBase):
@@ -148,22 +149,16 @@ class AsymmetricUniformQuantizer(QuantizerBase):
 		return x_quant
 
 	def _adjust_params_per_channel(self, x):
-		"""
-		Adjust quantization parameters tensors to the input tensor shape
-
-		Parameters
-		----------
-		x: torch.Tensor
-		    Input tensor
-		"""
-		# This function reshapes 1D per-channel parameters to match the input tensor's dimensions.
-		# The original logic assumed the channel dimension was axis 0.
-		# This fix assumes the standard activation format (N, C, H, W), where the channel is axis 1.
 		if x.ndim != self.delta.ndim:
 			new_shape = [-1] + [1] * (len(x.shape) - 1)
-			self._delta = self.delta.view(new_shape)
-			if self._zero_float is not None:
-				self._zero_float = self._zero_float.view(new_shape)
+			if isinstance(self._delta, torch.nn.Parameter):
+				self._delta.data = self._delta.data.view(new_shape)
+				if self._zero_float is not None:
+					self._zero_float.data = self._zero_float.data.view(new_shape)
+			else:
+				self._delta = self._delta.view(new_shape)
+				if self._zero_float is not None:
+					self._zero_float = self._zero_float.view(new_shape)
 
 	def _tensorize_min_max(self, x_min, x_max):
 		"""
@@ -199,22 +194,18 @@ class AsymmetricUniformQuantizer(QuantizerBase):
 		return x_min, x_max
 
 	def set_quant_range(self, x_min, x_max):
-		"""
-		Set the quantization range for the input tensor.
-
-		Parameters
-		----------
-		x_min: Torch.tensor/float
-		x_max: Torch.tensor/float
-		"""
-
 		self.x_min_fp32 = x_min
 		self.x_max_fp32 = x_max
 		x_min, x_max = self._tensorize_min_max(x_min, x_max)
-		self._delta = (x_max - x_min) / (self.int_max)
-		self._zero_float = (-x_min / self._delta).detach()
+		delta = (x_max - x_min) / (self.int_max)
+		zero_float = (-x_min / delta).detach()
 
-		self._delta = self._delta.detach()
+		if isinstance(self._delta, torch.nn.Parameter):
+			self._delta.data = delta.detach()
+			self._zero_float.data = zero_float
+		else:
+			self._delta = delta.detach()
+			self._zero_float = zero_float
 
 	def make_range_trainable(self):
 		# Converts trainable parameters to nn.Parameters

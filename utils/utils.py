@@ -85,30 +85,29 @@ Ví dụ sử dụng:
     ['LINEAR', 'CONV']
 """
 
+
 class DotDict(dict):
-    """
-    A dictionary that allows attribute-style access.
-    Examples
-    --------
-    >>> config = DotDict(a=None)
-    >>> config.a = 42
-    >>> config.b = 'egg'
-    >>> config  # can be used as dict
-    {'a': 42, 'b': 'egg'}
-    """
+	"""
+	A dictionary that allows attribute-style access.
+	Examples
+	--------
+	>>> config = DotDict(a=None)
+	>>> config.a = 42
+	>>> config.b = 'egg'
+	>>> config  # can be used as dict
+	{'a': 42, 'b': 'egg'}
+	"""
 
-    def __setattr__(self, key, value):
-        self.__setitem__(key, value)
+	def __setattr__(self, key, value):
+		self.__setitem__(key, value)
 
-    def __delattr__(self, key):
-        self.__delitem__(key)
+	def __delattr__(self, key):
+		self.__delitem__(key)
 
-    def __getattr__(self, key):
-        if key in self:
-            return self.__getitem__(key)
-        raise AttributeError(f"DotDict instance has no key '{key}' ({self.keys()})")
+	def __getattr__(self, key):
+		if key in self:
+			return self.__getitem__(key)
+		raise AttributeError(f"DotDict instance has no key '{key}' ({self.keys()})")
 
-    def copy(self):
-        return DotDict(self)
-    
-
+	def copy(self):
+		return DotDict(self)

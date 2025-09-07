@@ -1,7 +1,7 @@
 import torch
 import torch.serialization
 
-from Quantization.Quantizer import QuantizerBase
+from Quantization.Quantizer.quantizer_base import QuantizerBase
 from Quantization.Quantizer.rounding import ParametrizedGradEstimatorBase
 from Quantization.range_estimators import RangeEstimator
 
@@ -67,10 +67,12 @@ def separate_quantized_model_params(quant_model):
 
 	return quant_params, model_params, grad_params
 
+
 def get_layer_by_name(model, layer_name):
-    for name, module in model.named_modules():
-        if name == layer_name:
-            return module
+	for name, module in model.named_modules():
+		if name == layer_name:
+			return module
+
 
 def pass_data_for_range_estimation(
 	loader, model, act_quant, weight_quant, max_num_batches=20, cross_entropy_layer=None, inp_idx=0

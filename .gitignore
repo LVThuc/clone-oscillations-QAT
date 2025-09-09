@@ -3,5 +3,5 @@ __pycache__
 .venv
 .vscode
 data
-output.log
+*.log
 wandb

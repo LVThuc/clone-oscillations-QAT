@@ -28,7 +28,7 @@ class AsymmetricUniformQuantizer(QuantizerBase):
 		self,
 		n_bits,
 		scale_domain='linear',
-		discretizer='EWGS',  # STE hoặc EWGS
+		discretizer='STE',  # STE hoặc EWGS
 		discretizer_args=(),
 		# grad_scaling = False,
 		eps=1e-8,
@@ -245,7 +245,7 @@ class SymmetricUniformQuantizer(QuantizerBase):
 		self,
 		n_bits,
 		scale_domain='linear',
-		discretizer='EWGS',  # STE hoặc EWGS
+		discretizer='STE',  # STE hoặc EWGS
 		discretizer_args=(),
 		# grad_scaling = False,
 		eps=1e-8,

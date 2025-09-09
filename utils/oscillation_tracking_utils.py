@@ -1,3 +1,4 @@
+from unittest import skip
 import torch
 
 from Quantization.quantization_hijacker import QuantizationHijacker
@@ -9,7 +10,9 @@ class TrackOscillation:
 	It tracks the oscillations in integer domain.
 	"""
 
-	def __init__(self, int_fwd, momentum=0.01, freeze_threshold=0, use_ema_x_int=True):
+	def __init__(
+		self, int_fwd, momentum=0.01, freeze_threshold=0.05, use_ema_x_int=True, freeze=True
+	):
 		self.int_fwd = int_fwd
 		self.momentum = momentum
 
@@ -28,11 +31,14 @@ class TrackOscillation:
 		self.frozen = None
 		self.frozen_x_int = None
 		self.ema_x_int = None
+		self.freeze = freeze
 
 	def __call__(self, x_float, skip_tracking=False, *args, **kwargs):
 		x_int = self.int_fwd(x_float, *args, **kwargs)
 
 		# Apply weight freezing
+		if self.freeze is False:
+			return x_int
 		if self.frozen is not None:
 			x_int = (
 				~self.frozen * x_int + self.frozen * self.frozen_x_int
@@ -64,15 +70,18 @@ class TrackOscillation:
 			self.iters_since_reset += 1
 
 			# Freeze some weights
-			if self.freeze_threshold > 0:  # kiểm tra có bật freeze ko
+			freeze_weights = torch.zeros_like(x_int, dtype=torch.bool)
+			if self.freeze_threshold > 0:
 				freeze_weights = self.ema_oscillation > self.freeze_threshold
-				self.frozen[freeze_weights] = True  # Set them to frozen
+				self.frozen[freeze_weights] = True
 				if self.use_ema_x_int:
-					self.frozen_x_int[freeze_weights] = torch.round(self.ema_x_int[freeze_weights])
-					# Update x_int EMA which can be used for freezing
+					# luôn update EMA cho toàn tensor
 					self.ema_x_int = self.momentum * x_int + (1 - self.momentum) * self.ema_x_int
+					self.frozen_x_int[freeze_weights] = torch.round(self.ema_x_int[freeze_weights])
 				else:
 					self.frozen_x_int[freeze_weights] = x_int[freeze_weights]
+
+			self.ratio_above_threshold = freeze_weights.float().mean().item()
 
 		return x_int
 

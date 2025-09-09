@@ -2,6 +2,8 @@ import wandb
 from ignite.engine import Events, create_supervised_trainer, create_supervised_evaluator
 from ignite.handlers import Checkpoint, global_step_from_engine
 
+from utils.oscillation_tracking_utils import add_oscillation_trackers
+
 
 def create_trainer_engine(
 	model,
@@ -13,6 +15,8 @@ def create_trainer_engine(
 	save_checkpoint_dir=None,
 	device='cuda',
 	project_name='clone-oscillations-QAT',
+	tracking_oscillations=True,
+	freeze_oscillations=True,
 ):
 	# Init W&B
 	wandb.init(project=project_name)
@@ -50,8 +54,14 @@ def create_trainer_engine(
 		)
 		trainer.add_event_handler(Events.EPOCH_COMPLETED, checkpoint)
 
+	# Add oscillation trackers
+	tracker_dict = None
+	if tracking_oscillations:
+		tracker_dict = add_oscillation_trackers(model, max_bits=4, freeze=freeze_oscillations)
 	# Add hooks for logging metrics
-	trainer.add_event_handler(Events.EPOCH_COMPLETED, log_training_results, optimizer)
+	trainer.add_event_handler(
+		Events.EPOCH_COMPLETED, lambda engine: log_training_results(engine, optimizer, tracker_dict)
+	)
 	trainer.add_event_handler(
 		Events.EPOCH_COMPLETED, run_evaluation_for_training, evaluator, data_loaders.val_loader
 	)
@@ -63,9 +73,20 @@ def custom_output_transform(x, y, y_pred, loss):
 	return y_pred, y
 
 
-def log_training_results(trainer, optimizer):
+def log_training_results(trainer, optimizer, tracker_dict=None):
 	learning_rate = optimizer.param_groups[0]['lr']
 	log_metrics(trainer.state.metrics, 'Training', trainer.state.epoch, learning_rate)
+
+	# --- log thêm tracker stats ---
+	if tracker_dict is not None:
+		tracker_logs = {}
+		for name, tracker in tracker_dict.items():
+			tracker_logs[f'{name}/ratio_above_threshold'] = getattr(
+				tracker, 'ratio_above_threshold', 0.0
+			)
+			tracker_logs[f'{name}/oscillated_sum'] = getattr(tracker, 'oscillated_sum', 0)
+			tracker_logs[f'{name}/iters_since_reset'] = getattr(tracker, 'iters_since_reset', 0)
+		wandb.log(tracker_logs, step=trainer.state.iteration)
 
 
 def run_evaluation_for_training(trainer, evaluator, val_loader):

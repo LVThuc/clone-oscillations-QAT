@@ -27,7 +27,7 @@ def test():
 		'quantize_input': False,
 	}
 
-	dataloader = DataLoader(image_size=96, batch_size=64, num_workers=4)
+	dataloader = DataLoader(image_size=96, batch_size=128, num_workers=4)
 
 	fp32, model = mobilenetv2_quantized(
 		model_dir='Model/Pretrained/mobilenetv2_cifar10.02.pth', **qparams
@@ -64,7 +64,7 @@ def test():
 	loss_metrics = {'loss': Loss(loss_func)}
 
 	metrics.update(loss_metrics)
-	save_checkpoint_dir = './Model/checkpoints/STE+freeze'
+	save_checkpoint_dir = './Model/checkpoints/Testing'
 	trainer, evaluator = create_trainer_engine(
 		model=model,
 		optimizer=optimizer,
@@ -74,8 +74,8 @@ def test():
 		lr_scheduler=lr_scheduler,
 		save_checkpoint_dir=save_checkpoint_dir,
 		device='cuda',
-		tracking_oscillations=True,
-		freeze_oscillations=True,
+		tracking_oscillations=False,
+		freeze_oscillations=False,
 	)
 	# pbar = ProgressBar()
 	# pbar.attach(trainer)

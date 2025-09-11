@@ -74,19 +74,24 @@ def custom_output_transform(x, y, y_pred, loss):
 
 
 def log_training_results(trainer, optimizer, tracker_dict=None):
-	learning_rate = optimizer.param_groups[0]['lr']
-	log_metrics(trainer.state.metrics, 'Training', trainer.state.epoch, learning_rate)
+    learning_rate = optimizer.param_groups[0]['lr']
+    log_metrics(trainer.state.metrics, 'Training', trainer.state.epoch, learning_rate)
 
-	# --- log thêm tracker stats ---
-	if tracker_dict is not None:
-		tracker_logs = {}
-		for name, tracker in tracker_dict.items():
-			tracker_logs[f'{name}/ratio_above_threshold'] = getattr(
-				tracker, 'ratio_above_threshold', 0.0
-			)
-			tracker_logs[f'{name}/oscillated_sum'] = getattr(tracker, 'oscillated_sum', 0)
-			tracker_logs[f'{name}/iters_since_reset'] = getattr(tracker, 'iters_since_reset', 0)
-		wandb.log(tracker_logs, step=trainer.state.iteration)
+    # --- log thêm tracker stats ---
+    if tracker_dict is not None and len(tracker_dict) > 0:
+        ratios = []
+        oscillated_sums = []
+
+        for tracker in tracker_dict.values():
+            ratios.append(getattr(tracker, 'ratio_above_threshold', 0.0))
+            oscillated_sums.append(getattr(tracker, 'oscillated_sum', 0))
+
+        tracker_logs = {
+            'trackers/avg_ratio_above_threshold': sum(ratios) / len(ratios),
+            'trackers/total_oscillated_sum': sum(oscillated_sums),
+        }
+
+        wandb.log(tracker_logs, step=trainer.state.epoch)
 
 
 def run_evaluation_for_training(trainer, evaluator, val_loader):

@@ -1,4 +1,3 @@
-from ast import Not
 import torch
 from Quantization.Quantizer.rounding import grad_estimator
 from Quantization.Quantizer.quantizer_base import QuantizerBase
@@ -222,6 +221,12 @@ class AsymmetricUniformQuantizer(QuantizerBase):
 			del self._zero_float
 			self.register_buffer('_delta', _delta)
 			self.register_buffer('_zero_float', _zero_float)
+   
+	def extra_repr(self):
+		return (f"n_bits={self.n_bits}, "
+				f"per_channel={self.per_channel}, "
+				f"is_initalized={self.is_initialized}, "
+				f"discretizer={getattr(self.discretizer, '__name__', str(self.discretizer))}")
 
 
 class SymmetricUniformQuantizer(QuantizerBase):

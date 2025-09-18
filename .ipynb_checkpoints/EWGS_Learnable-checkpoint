@@ -1,0 +1,1509 @@
+Loading pretrained weights from Model/Pretrained/mobilenetv2_cifar10.02.pth
+Tying input quantizer 18^th layer of type <class 'Quantization.autoquant_utils.BNQConv'> to the quantized <class 'torch.nn.modules.pooling.AvgPool2d'> following it
+MobileNetV2(
+  (features): Sequential(
+    (0): Sequential(
+      (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU6(inplace=True)
+    )
+    (1): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(32, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (4): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (2): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(16, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(96, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=96, bias=False)
+        (4): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(96, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (3): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(144, 144, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=144, bias=False)
+        (4): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(144, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (4): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False)
+        (4): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (5): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (4): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (6): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+        (4): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (7): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(192, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=192, bias=False)
+        (4): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (8): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False)
+        (4): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (9): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False)
+        (4): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (10): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False)
+        (4): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (11): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False)
+        (4): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (12): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+        (4): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (13): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+        (4): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (14): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False)
+        (4): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(576, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (15): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False)
+        (4): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (16): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False)
+        (4): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (17): InvertedResidual(
+      (conv): Sequential(
+        (0): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU6(inplace=True)
+        (3): Conv2d(960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False)
+        (4): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU6(inplace=True)
+        (6): Conv2d(960, 320, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (7): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (18): Sequential(
+      (0): Conv2d(320, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU6(inplace=True)
+    )
+    (19): AvgPool2d(kernel_size=3, stride=3, padding=0)
+  )
+  (classifier): Sequential(
+    (0): Dropout(p=0.2, inplace=False)
+    (1): Linear(in_features=1280, out_features=10, bias=True)
+  )
+)
+QuantizedMobileNetV2(
+  (features): Sequential(
+    (0): Sequential(
+      (0): BNQConv(
+        3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False,
+        weight_quant=False, act_quant=False
+        (activation_function): ReLU6(inplace=True)
+        (activation_quantizer): QuantizationManager(
+          (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+          (range_estimator): RunningMinMaxEstimator()
+        )
+        (weight_quantizer): QuantizationManager(
+          (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+          (range_estimator): RunningMinMaxEstimator()
+        )
+      )
+    )
+    (1): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          32, 16, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (2): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          16, 96, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          96, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=96, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          96, 24, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (3): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          144, 144, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=144, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          144, 24, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (4): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (5): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (6): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (7): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          192, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=192, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (8): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (9): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (10): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          384, 64, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (11): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          64, 384, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=384, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (12): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (13): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (14): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          576, 576, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=576, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          576, 160, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (15): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (16): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (17): QuantizedInvertedResidual(
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (conv): Sequential(
+        (0): BNQConv(
+          160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (1): BNQConv(
+          960, 960, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=960, bias=False,
+          weight_quant=False, act_quant=False
+          (activation_function): ReLU6(inplace=True)
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+        (2): BNQConv(
+          960, 320, kernel_size=(1, 1), stride=(1, 1), bias=False,
+          weight_quant=False, act_quant=False
+          (activation_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+          (weight_quantizer): QuantizationManager(
+            (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+            (range_estimator): RunningMinMaxEstimator()
+          )
+        )
+      )
+    )
+    (18): Sequential(
+      (0): BNQConv(
+        320, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False,
+        weight_quant=False, act_quant=False
+        (activation_function): ReLU6(inplace=True)
+        (activation_quantizer): QuantizationManager(
+          (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+          (range_estimator): RunningMinMaxEstimator()
+        )
+        (weight_quantizer): QuantizationManager(
+          (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+          (range_estimator): RunningMinMaxEstimator()
+        )
+      )
+    )
+    (19): QuantizedActivationWrapper(
+      tie_activation_quantizers=True
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (layer): AvgPool2d(kernel_size=3, stride=3, padding=0)
+    )
+  )
+  (flattener): Flattener()
+  (classifier): Sequential(
+    (0): Dropout(p=0.2, inplace=False)
+    (1): QuantLinear(
+      in_features=1280, out_features=10, bias=True,
+      weight_quant=False, act_quant=False
+      (activation_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=False, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+      (weight_quantizer): QuantizationManager(
+        (quantizer): AsymmetricUniformQuantizer(n_bits=3, per_channel=True, is_initalized=False, discretizer=apply)
+        (range_estimator): RunningMinMaxEstimator()
+      )
+    )
+  )
+)
+
+Estimate quantization ranges on training data
+proccesed step=0
+proccesed step=1
+proccesed step=2
+proccesed step=3
+proccesed step=4
+proccesed step=5
+proccesed step=6
+proccesed step=7
+proccesed step=8
+proccesed step=9
+proccesed step=10
+proccesed step=11
+proccesed step=12
+proccesed step=13
+proccesed step=14
+proccesed step=15
+proccesed step=16
+proccesed step=17
+proccesed step=18
+proccesed step=19
+Quantization parameters (232):
+['features.0.0.activation_quantizer.quantizer._delta', 'features.0.0.activation_quantizer.quantizer._zero_float', 'features.0.0.weight_quantizer.quantizer._delta', 'features.0.0.weight_quantizer.quantizer._zero_float', 'features.1.conv.0.activation_quantizer.quantizer._delta', 'features.1.conv.0.activation_quantizer.quantizer._zero_float', 'features.1.conv.0.weight_quantizer.quantizer._delta', 'features.1.conv.0.weight_quantizer.quantizer._zero_float', 'features.1.conv.1.activation_quantizer.quantizer._delta', 'features.1.conv.1.activation_quantizer.quantizer._zero_float', 'features.1.conv.1.weight_quantizer.quantizer._delta', 'features.1.conv.1.weight_quantizer.quantizer._zero_float', 'features.2.conv.0.activation_quantizer.quantizer._delta', 'features.2.conv.0.activation_quantizer.quantizer._zero_float', 'features.2.conv.0.weight_quantizer.quantizer._delta', 'features.2.conv.0.weight_quantizer.quantizer._zero_float', 'features.2.conv.1.activation_quantizer.quantizer._delta', 'features.2.conv.1.activation_quantizer.quantizer._zero_float', 'features.2.conv.1.weight_quantizer.quantizer._delta', 'features.2.conv.1.weight_quantizer.quantizer._zero_float', 'features.2.conv.2.activation_quantizer.quantizer._delta', 'features.2.conv.2.activation_quantizer.quantizer._zero_float', 'features.2.conv.2.weight_quantizer.quantizer._delta', 'features.2.conv.2.weight_quantizer.quantizer._zero_float', 'features.3.activation_quantizer.quantizer._delta', 'features.3.activation_quantizer.quantizer._zero_float', 'features.3.conv.0.activation_quantizer.quantizer._delta', 'features.3.conv.0.activation_quantizer.quantizer._zero_float', 'features.3.conv.0.weight_quantizer.quantizer._delta', 'features.3.conv.0.weight_quantizer.quantizer._zero_float', 'features.3.conv.1.activation_quantizer.quantizer._delta', 'features.3.conv.1.activation_quantizer.quantizer._zero_float', 'features.3.conv.1.weight_quantizer.quantizer._delta', 'features.3.conv.1.weight_quantizer.quantizer._zero_float', 'features.3.conv.2.activation_quantizer.quantizer._delta', 'features.3.conv.2.activation_quantizer.quantizer._zero_float', 'features.3.conv.2.weight_quantizer.quantizer._delta', 'features.3.conv.2.weight_quantizer.quantizer._zero_float', 'features.4.conv.0.activation_quantizer.quantizer._delta', 'features.4.conv.0.activation_quantizer.quantizer._zero_float', 'features.4.conv.0.weight_quantizer.quantizer._delta', 'features.4.conv.0.weight_quantizer.quantizer._zero_float', 'features.4.conv.1.activation_quantizer.quantizer._delta', 'features.4.conv.1.activation_quantizer.quantizer._zero_float', 'features.4.conv.1.weight_quantizer.quantizer._delta', 'features.4.conv.1.weight_quantizer.quantizer._zero_float', 'features.4.conv.2.activation_quantizer.quantizer._delta', 'features.4.conv.2.activation_quantizer.quantizer._zero_float', 'features.4.conv.2.weight_quantizer.quantizer._delta', 'features.4.conv.2.weight_quantizer.quantizer._zero_float', 'features.5.activation_quantizer.quantizer._delta', 'features.5.activation_quantizer.quantizer._zero_float', 'features.5.conv.0.activation_quantizer.quantizer._delta', 'features.5.conv.0.activation_quantizer.quantizer._zero_float', 'features.5.conv.0.weight_quantizer.quantizer._delta', 'features.5.conv.0.weight_quantizer.quantizer._zero_float', 'features.5.conv.1.activation_quantizer.quantizer._delta', 'features.5.conv.1.activation_quantizer.quantizer._zero_float', 'features.5.conv.1.weight_quantizer.quantizer._delta', 'features.5.conv.1.weight_quantizer.quantizer._zero_float', 'features.5.conv.2.activation_quantizer.quantizer._delta', 'features.5.conv.2.activation_quantizer.quantizer._zero_float', 'features.5.conv.2.weight_quantizer.quantizer._delta', 'features.5.conv.2.weight_quantizer.quantizer._zero_float', 'features.6.activation_quantizer.quantizer._delta', 'features.6.activation_quantizer.quantizer._zero_float', 'features.6.conv.0.activation_quantizer.quantizer._delta', 'features.6.conv.0.activation_quantizer.quantizer._zero_float', 'features.6.conv.0.weight_quantizer.quantizer._delta', 'features.6.conv.0.weight_quantizer.quantizer._zero_float', 'features.6.conv.1.activation_quantizer.quantizer._delta', 'features.6.conv.1.activation_quantizer.quantizer._zero_float', 'features.6.conv.1.weight_quantizer.quantizer._delta', 'features.6.conv.1.weight_quantizer.quantizer._zero_float', 'features.6.conv.2.activation_quantizer.quantizer._delta', 'features.6.conv.2.activation_quantizer.quantizer._zero_float', 'features.6.conv.2.weight_quantizer.quantizer._delta', 'features.6.conv.2.weight_quantizer.quantizer._zero_float', 'features.7.conv.0.activation_quantizer.quantizer._delta', 'features.7.conv.0.activation_quantizer.quantizer._zero_float', 'features.7.conv.0.weight_quantizer.quantizer._delta', 'features.7.conv.0.weight_quantizer.quantizer._zero_float', 'features.7.conv.1.activation_quantizer.quantizer._delta', 'features.7.conv.1.activation_quantizer.quantizer._zero_float', 'features.7.conv.1.weight_quantizer.quantizer._delta', 'features.7.conv.1.weight_quantizer.quantizer._zero_float', 'features.7.conv.2.activation_quantizer.quantizer._delta', 'features.7.conv.2.activation_quantizer.quantizer._zero_float', 'features.7.conv.2.weight_quantizer.quantizer._delta', 'features.7.conv.2.weight_quantizer.quantizer._zero_float', 'features.8.activation_quantizer.quantizer._delta', 'features.8.activation_quantizer.quantizer._zero_float', 'features.8.conv.0.activation_quantizer.quantizer._delta', 'features.8.conv.0.activation_quantizer.quantizer._zero_float', 'features.8.conv.0.weight_quantizer.quantizer._delta', 'features.8.conv.0.weight_quantizer.quantizer._zero_float', 'features.8.conv.1.activation_quantizer.quantizer._delta', 'features.8.conv.1.activation_quantizer.quantizer._zero_float', 'features.8.conv.1.weight_quantizer.quantizer._delta', 'features.8.conv.1.weight_quantizer.quantizer._zero_float', 'features.8.conv.2.activation_quantizer.quantizer._delta', 'features.8.conv.2.activation_quantizer.quantizer._zero_float', 'features.8.conv.2.weight_quantizer.quantizer._delta', 'features.8.conv.2.weight_quantizer.quantizer._zero_float', 'features.9.activation_quantizer.quantizer._delta', 'features.9.activation_quantizer.quantizer._zero_float', 'features.9.conv.0.activation_quantizer.quantizer._delta', 'features.9.conv.0.activation_quantizer.quantizer._zero_float', 'features.9.conv.0.weight_quantizer.quantizer._delta', 'features.9.conv.0.weight_quantizer.quantizer._zero_float', 'features.9.conv.1.activation_quantizer.quantizer._delta', 'features.9.conv.1.activation_quantizer.quantizer._zero_float', 'features.9.conv.1.weight_quantizer.quantizer._delta', 'features.9.conv.1.weight_quantizer.quantizer._zero_float', 'features.9.conv.2.activation_quantizer.quantizer._delta', 'features.9.conv.2.activation_quantizer.quantizer._zero_float', 'features.9.conv.2.weight_quantizer.quantizer._delta', 'features.9.conv.2.weight_quantizer.quantizer._zero_float', 'features.10.activation_quantizer.quantizer._delta', 'features.10.activation_quantizer.quantizer._zero_float', 'features.10.conv.0.activation_quantizer.quantizer._delta', 'features.10.conv.0.activation_quantizer.quantizer._zero_float', 'features.10.conv.0.weight_quantizer.quantizer._delta', 'features.10.conv.0.weight_quantizer.quantizer._zero_float', 'features.10.conv.1.activation_quantizer.quantizer._delta', 'features.10.conv.1.activation_quantizer.quantizer._zero_float', 'features.10.conv.1.weight_quantizer.quantizer._delta', 'features.10.conv.1.weight_quantizer.quantizer._zero_float', 'features.10.conv.2.activation_quantizer.quantizer._delta', 'features.10.conv.2.activation_quantizer.quantizer._zero_float', 'features.10.conv.2.weight_quantizer.quantizer._delta', 'features.10.conv.2.weight_quantizer.quantizer._zero_float', 'features.11.conv.0.activation_quantizer.quantizer._delta', 'features.11.conv.0.activation_quantizer.quantizer._zero_float', 'features.11.conv.0.weight_quantizer.quantizer._delta', 'features.11.conv.0.weight_quantizer.quantizer._zero_float', 'features.11.conv.1.activation_quantizer.quantizer._delta', 'features.11.conv.1.activation_quantizer.quantizer._zero_float', 'features.11.conv.1.weight_quantizer.quantizer._delta', 'features.11.conv.1.weight_quantizer.quantizer._zero_float', 'features.11.conv.2.activation_quantizer.quantizer._delta', 'features.11.conv.2.activation_quantizer.quantizer._zero_float', 'features.11.conv.2.weight_quantizer.quantizer._delta', 'features.11.conv.2.weight_quantizer.quantizer._zero_float', 'features.12.activation_quantizer.quantizer._delta', 'features.12.activation_quantizer.quantizer._zero_float', 'features.12.conv.0.activation_quantizer.quantizer._delta', 'features.12.conv.0.activation_quantizer.quantizer._zero_float', 'features.12.conv.0.weight_quantizer.quantizer._delta', 'features.12.conv.0.weight_quantizer.quantizer._zero_float', 'features.12.conv.1.activation_quantizer.quantizer._delta', 'features.12.conv.1.activation_quantizer.quantizer._zero_float', 'features.12.conv.1.weight_quantizer.quantizer._delta', 'features.12.conv.1.weight_quantizer.quantizer._zero_float', 'features.12.conv.2.activation_quantizer.quantizer._delta', 'features.12.conv.2.activation_quantizer.quantizer._zero_float', 'features.12.conv.2.weight_quantizer.quantizer._delta', 'features.12.conv.2.weight_quantizer.quantizer._zero_float', 'features.13.activation_quantizer.quantizer._delta', 'features.13.activation_quantizer.quantizer._zero_float', 'features.13.conv.0.activation_quantizer.quantizer._delta', 'features.13.conv.0.activation_quantizer.quantizer._zero_float', 'features.13.conv.0.weight_quantizer.quantizer._delta', 'features.13.conv.0.weight_quantizer.quantizer._zero_float', 'features.13.conv.1.activation_quantizer.quantizer._delta', 'features.13.conv.1.activation_quantizer.quantizer._zero_float', 'features.13.conv.1.weight_quantizer.quantizer._delta', 'features.13.conv.1.weight_quantizer.quantizer._zero_float', 'features.13.conv.2.activation_quantizer.quantizer._delta', 'features.13.conv.2.activation_quantizer.quantizer._zero_float', 'features.13.conv.2.weight_quantizer.quantizer._delta', 'features.13.conv.2.weight_quantizer.quantizer._zero_float', 'features.14.conv.0.activation_quantizer.quantizer._delta', 'features.14.conv.0.activation_quantizer.quantizer._zero_float', 'features.14.conv.0.weight_quantizer.quantizer._delta', 'features.14.conv.0.weight_quantizer.quantizer._zero_float', 'features.14.conv.1.activation_quantizer.quantizer._delta', 'features.14.conv.1.activation_quantizer.quantizer._zero_float', 'features.14.conv.1.weight_quantizer.quantizer._delta', 'features.14.conv.1.weight_quantizer.quantizer._zero_float', 'features.14.conv.2.activation_quantizer.quantizer._delta', 'features.14.conv.2.activation_quantizer.quantizer._zero_float', 'features.14.conv.2.weight_quantizer.quantizer._delta', 'features.14.conv.2.weight_quantizer.quantizer._zero_float', 'features.15.activation_quantizer.quantizer._delta', 'features.15.activation_quantizer.quantizer._zero_float', 'features.15.conv.0.activation_quantizer.quantizer._delta', 'features.15.conv.0.activation_quantizer.quantizer._zero_float', 'features.15.conv.0.weight_quantizer.quantizer._delta', 'features.15.conv.0.weight_quantizer.quantizer._zero_float', 'features.15.conv.1.activation_quantizer.quantizer._delta', 'features.15.conv.1.activation_quantizer.quantizer._zero_float', 'features.15.conv.1.weight_quantizer.quantizer._delta', 'features.15.conv.1.weight_quantizer.quantizer._zero_float', 'features.15.conv.2.activation_quantizer.quantizer._delta', 'features.15.conv.2.activation_quantizer.quantizer._zero_float', 'features.15.conv.2.weight_quantizer.quantizer._delta', 'features.15.conv.2.weight_quantizer.quantizer._zero_float', 'features.16.activation_quantizer.quantizer._delta', 'features.16.activation_quantizer.quantizer._zero_float', 'features.16.conv.0.activation_quantizer.quantizer._delta', 'features.16.conv.0.activation_quantizer.quantizer._zero_float', 'features.16.conv.0.weight_quantizer.quantizer._delta', 'features.16.conv.0.weight_quantizer.quantizer._zero_float', 'features.16.conv.1.activation_quantizer.quantizer._delta', 'features.16.conv.1.activation_quantizer.quantizer._zero_float', 'features.16.conv.1.weight_quantizer.quantizer._delta', 'features.16.conv.1.weight_quantizer.quantizer._zero_float', 'features.16.conv.2.activation_quantizer.quantizer._delta', 'features.16.conv.2.activation_quantizer.quantizer._zero_float', 'features.16.conv.2.weight_quantizer.quantizer._delta', 'features.16.conv.2.weight_quantizer.quantizer._zero_float', 'features.17.conv.0.activation_quantizer.quantizer._delta', 'features.17.conv.0.activation_quantizer.quantizer._zero_float', 'features.17.conv.0.weight_quantizer.quantizer._delta', 'features.17.conv.0.weight_quantizer.quantizer._zero_float', 'features.17.conv.1.activation_quantizer.quantizer._delta', 'features.17.conv.1.activation_quantizer.quantizer._zero_float', 'features.17.conv.1.weight_quantizer.quantizer._delta', 'features.17.conv.1.weight_quantizer.quantizer._zero_float', 'features.17.conv.2.activation_quantizer.quantizer._delta', 'features.17.conv.2.activation_quantizer.quantizer._zero_float', 'features.17.conv.2.weight_quantizer.quantizer._delta', 'features.17.conv.2.weight_quantizer.quantizer._zero_float', 'features.18.0.activation_quantizer.quantizer._delta', 'features.18.0.activation_quantizer.quantizer._zero_float', 'features.18.0.weight_quantizer.quantizer._delta', 'features.18.0.weight_quantizer.quantizer._zero_float', 'classifier.1.activation_quantizer.quantizer._delta', 'classifier.1.activation_quantizer.quantizer._zero_float', 'classifier.1.weight_quantizer.quantizer._delta', 'classifier.1.weight_quantizer.quantizer._zero_float']wandb: Currently logged in as: 24520002 (21522798-uit) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: creating run
+wandb: Tracking run with wandb version 0.21.3
+wandb: Run data is saved locally in /home/jupyter-iec2024se11/clone-oscillations-qat/clone-oscillations-QAT/wandb/run-20250911_124410-nwj8dj80
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dashing-blaze-33
+wandb: ⭐️ View project at https://wandb.ai/21522798-uit/clone-oscillations-QAT
+wandb: 🚀 View run at https://wandb.ai/21522798-uit/clone-oscillations-QAT/runs/nwj8dj80
+
+Gradient estimator parameters (0):
+[]
+Other model parameters (158):
+['features.0.0.weight', 'features.0.0.gamma', 'features.0.0.beta', 'features.1.conv.0.weight', 'features.1.conv.0.gamma', 'features.1.conv.0.beta', 'features.1.conv.1.weight', 'features.1.conv.1.gamma', 'features.1.conv.1.beta', 'features.2.conv.0.weight', 'features.2.conv.0.gamma', 'features.2.conv.0.beta', 'features.2.conv.1.weight', 'features.2.conv.1.gamma', 'features.2.conv.1.beta', 'features.2.conv.2.weight', 'features.2.conv.2.gamma', 'features.2.conv.2.beta', 'features.3.conv.0.weight', 'features.3.conv.0.gamma', 'features.3.conv.0.beta', 'features.3.conv.1.weight', 'features.3.conv.1.gamma', 'features.3.conv.1.beta', 'features.3.conv.2.weight', 'features.3.conv.2.gamma', 'features.3.conv.2.beta', 'features.4.conv.0.weight', 'features.4.conv.0.gamma', 'features.4.conv.0.beta', 'features.4.conv.1.weight', 'features.4.conv.1.gamma', 'features.4.conv.1.beta', 'features.4.conv.2.weight', 'features.4.conv.2.gamma', 'features.4.conv.2.beta', 'features.5.conv.0.weight', 'features.5.conv.0.gamma', 'features.5.conv.0.beta', 'features.5.conv.1.weight', 'features.5.conv.1.gamma', 'features.5.conv.1.beta', 'features.5.conv.2.weight', 'features.5.conv.2.gamma', 'features.5.conv.2.beta', 'features.6.conv.0.weight', 'features.6.conv.0.gamma', 'features.6.conv.0.beta', 'features.6.conv.1.weight', 'features.6.conv.1.gamma', 'features.6.conv.1.beta', 'features.6.conv.2.weight', 'features.6.conv.2.gamma', 'features.6.conv.2.beta', 'features.7.conv.0.weight', 'features.7.conv.0.gamma', 'features.7.conv.0.beta', 'features.7.conv.1.weight', 'features.7.conv.1.gamma', 'features.7.conv.1.beta', 'features.7.conv.2.weight', 'features.7.conv.2.gamma', 'features.7.conv.2.beta', 'features.8.conv.0.weight', 'features.8.conv.0.gamma', 'features.8.conv.0.beta', 'features.8.conv.1.weight', 'features.8.conv.1.gamma', 'features.8.conv.1.beta', 'features.8.conv.2.weight', 'features.8.conv.2.gamma', 'features.8.conv.2.beta', 'features.9.conv.0.weight', 'features.9.conv.0.gamma', 'features.9.conv.0.beta', 'features.9.conv.1.weight', 'features.9.conv.1.gamma', 'features.9.conv.1.beta', 'features.9.conv.2.weight', 'features.9.conv.2.gamma', 'features.9.conv.2.beta', 'features.10.conv.0.weight', 'features.10.conv.0.gamma', 'features.10.conv.0.beta', 'features.10.conv.1.weight', 'features.10.conv.1.gamma', 'features.10.conv.1.beta', 'features.10.conv.2.weight', 'features.10.conv.2.gamma', 'features.10.conv.2.beta', 'features.11.conv.0.weight', 'features.11.conv.0.gamma', 'features.11.conv.0.beta', 'features.11.conv.1.weight', 'features.11.conv.1.gamma', 'features.11.conv.1.beta', 'features.11.conv.2.weight', 'features.11.conv.2.gamma', 'features.11.conv.2.beta', 'features.12.conv.0.weight', 'features.12.conv.0.gamma', 'features.12.conv.0.beta', 'features.12.conv.1.weight', 'features.12.conv.1.gamma', 'features.12.conv.1.beta', 'features.12.conv.2.weight', 'features.12.conv.2.gamma', 'features.12.conv.2.beta', 'features.13.conv.0.weight', 'features.13.conv.0.gamma', 'features.13.conv.0.beta', 'features.13.conv.1.weight', 'features.13.conv.1.gamma', 'features.13.conv.1.beta', 'features.13.conv.2.weight', 'features.13.conv.2.gamma', 'features.13.conv.2.beta', 'features.14.conv.0.weight', 'features.14.conv.0.gamma', 'features.14.conv.0.beta', 'features.14.conv.1.weight', 'features.14.conv.1.gamma', 'features.14.conv.1.beta', 'features.14.conv.2.weight', 'features.14.conv.2.gamma', 'features.14.conv.2.beta', 'features.15.conv.0.weight', 'features.15.conv.0.gamma', 'features.15.conv.0.beta', 'features.15.conv.1.weight', 'features.15.conv.1.gamma', 'features.15.conv.1.beta', 'features.15.conv.2.weight', 'features.15.conv.2.gamma', 'features.15.conv.2.beta', 'features.16.conv.0.weight', 'features.16.conv.0.gamma', 'features.16.conv.0.beta', 'features.16.conv.1.weight', 'features.16.conv.1.gamma', 'features.16.conv.1.beta', 'features.16.conv.2.weight', 'features.16.conv.2.gamma', 'features.16.conv.2.beta', 'features.17.conv.0.weight', 'features.17.conv.0.gamma', 'features.17.conv.0.beta', 'features.17.conv.1.weight', 'features.17.conv.1.gamma', 'features.17.conv.1.beta', 'features.17.conv.2.weight', 'features.17.conv.2.gamma', 'features.17.conv.2.beta', 'features.18.0.weight', 'features.18.0.gamma', 'features.18.0.beta', 'classifier.1.weight', 'classifier.1.bias']
+SGD (
+Parameter Group 0
+    dampening: 0
+    differentiable: False
+    foreach: None
+    fused: None
+    initial_lr: 0.01
+    lr: 0.01
+    maximize: False
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 1e-05
+)
+<torch.optim.lr_scheduler.CosineAnnealingLR object at 0x7717cc11c320>
+features.0.0.weight: NO grad
+features.0.0.gamma: NO grad
+features.0.0.beta: NO grad
+features.0.0.activation_quantizer.quantizer._delta: NO grad
+features.0.0.activation_quantizer.quantizer._zero_float: NO grad
+features.0.0.weight_quantizer.quantizer._delta: NO grad
+features.0.0.weight_quantizer.quantizer._zero_float: NO grad
+features.1.conv.0.weight: NO grad
+features.1.conv.0.gamma: NO grad
+features.1.conv.0.beta: NO grad
+features.1.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.1.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.1.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.1.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.1.conv.1.weight: NO grad
+features.1.conv.1.gamma: NO grad
+features.1.conv.1.beta: NO grad
+features.1.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.1.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.1.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.1.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.2.conv.0.weight: NO grad
+features.2.conv.0.gamma: NO grad
+features.2.conv.0.beta: NO grad
+features.2.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.2.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.2.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.2.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.2.conv.1.weight: NO grad
+features.2.conv.1.gamma: NO grad
+features.2.conv.1.beta: NO grad
+features.2.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.2.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.2.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.2.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.2.conv.2.weight: NO grad
+features.2.conv.2.gamma: NO grad
+features.2.conv.2.beta: NO grad
+features.2.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.2.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.2.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.2.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.3.activation_quantizer.quantizer._delta: NO grad
+features.3.activation_quantizer.quantizer._zero_float: NO grad
+features.3.conv.0.weight: NO grad
+features.3.conv.0.gamma: NO grad
+features.3.conv.0.beta: NO grad
+features.3.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.3.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.3.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.3.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.3.conv.1.weight: NO grad
+features.3.conv.1.gamma: NO grad
+features.3.conv.1.beta: NO grad
+features.3.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.3.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.3.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.3.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.3.conv.2.weight: NO grad
+features.3.conv.2.gamma: NO grad
+features.3.conv.2.beta: NO grad
+features.3.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.3.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.3.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.3.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.4.conv.0.weight: NO grad
+features.4.conv.0.gamma: NO grad
+features.4.conv.0.beta: NO grad
+features.4.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.4.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.4.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.4.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.4.conv.1.weight: NO grad
+features.4.conv.1.gamma: NO grad
+features.4.conv.1.beta: NO grad
+features.4.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.4.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.4.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.4.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.4.conv.2.weight: NO grad
+features.4.conv.2.gamma: NO grad
+features.4.conv.2.beta: NO grad
+features.4.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.4.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.4.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.4.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.5.activation_quantizer.quantizer._delta: NO grad
+features.5.activation_quantizer.quantizer._zero_float: NO grad
+features.5.conv.0.weight: NO grad
+features.5.conv.0.gamma: NO grad
+features.5.conv.0.beta: NO grad
+features.5.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.5.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.5.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.5.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.5.conv.1.weight: NO grad
+features.5.conv.1.gamma: NO grad
+features.5.conv.1.beta: NO grad
+features.5.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.5.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.5.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.5.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.5.conv.2.weight: NO grad
+features.5.conv.2.gamma: NO grad
+features.5.conv.2.beta: NO grad
+features.5.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.5.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.5.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.5.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.6.activation_quantizer.quantizer._delta: NO grad
+features.6.activation_quantizer.quantizer._zero_float: NO grad
+features.6.conv.0.weight: NO grad
+features.6.conv.0.gamma: NO grad
+features.6.conv.0.beta: NO grad
+features.6.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.6.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.6.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.6.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.6.conv.1.weight: NO grad
+features.6.conv.1.gamma: NO grad
+features.6.conv.1.beta: NO grad
+features.6.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.6.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.6.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.6.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.6.conv.2.weight: NO grad
+features.6.conv.2.gamma: NO grad
+features.6.conv.2.beta: NO grad
+features.6.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.6.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.6.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.6.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.7.conv.0.weight: NO grad
+features.7.conv.0.gamma: NO grad
+features.7.conv.0.beta: NO grad
+features.7.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.7.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.7.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.7.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.7.conv.1.weight: NO grad
+features.7.conv.1.gamma: NO grad
+features.7.conv.1.beta: NO grad
+features.7.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.7.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.7.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.7.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.7.conv.2.weight: NO grad
+features.7.conv.2.gamma: NO grad
+features.7.conv.2.beta: NO grad
+features.7.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.7.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.7.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.7.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.8.activation_quantizer.quantizer._delta: NO grad
+features.8.activation_quantizer.quantizer._zero_float: NO grad
+features.8.conv.0.weight: NO grad
+features.8.conv.0.gamma: NO grad
+features.8.conv.0.beta: NO grad
+features.8.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.8.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.8.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.8.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.8.conv.1.weight: NO grad
+features.8.conv.1.gamma: NO grad
+features.8.conv.1.beta: NO grad
+features.8.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.8.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.8.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.8.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.8.conv.2.weight: NO grad
+features.8.conv.2.gamma: NO grad
+features.8.conv.2.beta: NO grad
+features.8.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.8.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.8.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.8.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.9.activation_quantizer.quantizer._delta: NO grad
+features.9.activation_quantizer.quantizer._zero_float: NO grad
+features.9.conv.0.weight: NO grad
+features.9.conv.0.gamma: NO grad
+features.9.conv.0.beta: NO grad
+features.9.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.9.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.9.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.9.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.9.conv.1.weight: NO grad
+features.9.conv.1.gamma: NO grad
+features.9.conv.1.beta: NO grad
+features.9.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.9.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.9.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.9.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.9.conv.2.weight: NO grad
+features.9.conv.2.gamma: NO grad
+features.9.conv.2.beta: NO grad
+features.9.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.9.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.9.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.9.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.10.activation_quantizer.quantizer._delta: NO grad
+features.10.activation_quantizer.quantizer._zero_float: NO grad
+features.10.conv.0.weight: NO grad
+features.10.conv.0.gamma: NO grad
+features.10.conv.0.beta: NO grad
+features.10.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.10.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.10.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.10.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.10.conv.1.weight: NO grad
+features.10.conv.1.gamma: NO grad
+features.10.conv.1.beta: NO grad
+features.10.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.10.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.10.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.10.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.10.conv.2.weight: NO grad
+features.10.conv.2.gamma: NO grad
+features.10.conv.2.beta: NO grad
+features.10.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.10.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.10.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.10.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.11.conv.0.weight: NO grad
+features.11.conv.0.gamma: NO grad
+features.11.conv.0.beta: NO grad
+features.11.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.11.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.11.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.11.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.11.conv.1.weight: NO grad
+features.11.conv.1.gamma: NO grad
+features.11.conv.1.beta: NO grad
+features.11.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.11.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.11.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.11.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.11.conv.2.weight: NO grad
+features.11.conv.2.gamma: NO grad
+features.11.conv.2.beta: NO grad
+features.11.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.11.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.11.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.11.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.12.activation_quantizer.quantizer._delta: NO grad
+features.12.activation_quantizer.quantizer._zero_float: NO grad
+features.12.conv.0.weight: NO grad
+features.12.conv.0.gamma: NO grad
+features.12.conv.0.beta: NO grad
+features.12.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.12.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.12.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.12.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.12.conv.1.weight: NO grad
+features.12.conv.1.gamma: NO grad
+features.12.conv.1.beta: NO grad
+features.12.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.12.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.12.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.12.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.12.conv.2.weight: NO grad
+features.12.conv.2.gamma: NO grad
+features.12.conv.2.beta: NO grad
+features.12.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.12.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.12.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.12.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.13.activation_quantizer.quantizer._delta: NO grad
+features.13.activation_quantizer.quantizer._zero_float: NO grad
+features.13.conv.0.weight: NO grad
+features.13.conv.0.gamma: NO grad
+features.13.conv.0.beta: NO grad
+features.13.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.13.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.13.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.13.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.13.conv.1.weight: NO grad
+features.13.conv.1.gamma: NO grad
+features.13.conv.1.beta: NO grad
+features.13.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.13.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.13.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.13.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.13.conv.2.weight: NO grad
+features.13.conv.2.gamma: NO grad
+features.13.conv.2.beta: NO grad
+features.13.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.13.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.13.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.13.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.14.conv.0.weight: NO grad
+features.14.conv.0.gamma: NO grad
+features.14.conv.0.beta: NO grad
+features.14.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.14.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.14.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.14.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.14.conv.1.weight: NO grad
+features.14.conv.1.gamma: NO grad
+features.14.conv.1.beta: NO grad
+features.14.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.14.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.14.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.14.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.14.conv.2.weight: NO grad
+features.14.conv.2.gamma: NO grad
+features.14.conv.2.beta: NO grad
+features.14.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.14.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.14.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.14.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.15.activation_quantizer.quantizer._delta: NO grad
+features.15.activation_quantizer.quantizer._zero_float: NO grad
+features.15.conv.0.weight: NO grad
+features.15.conv.0.gamma: NO grad
+features.15.conv.0.beta: NO grad
+features.15.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.15.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.15.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.15.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.15.conv.1.weight: NO grad
+features.15.conv.1.gamma: NO grad
+features.15.conv.1.beta: NO grad
+features.15.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.15.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.15.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.15.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.15.conv.2.weight: NO grad
+features.15.conv.2.gamma: NO grad
+features.15.conv.2.beta: NO grad
+features.15.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.15.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.15.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.15.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.16.activation_quantizer.quantizer._delta: NO grad
+features.16.activation_quantizer.quantizer._zero_float: NO grad
+features.16.conv.0.weight: NO grad
+features.16.conv.0.gamma: NO grad
+features.16.conv.0.beta: NO grad
+features.16.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.16.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.16.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.16.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.16.conv.1.weight: NO grad
+features.16.conv.1.gamma: NO grad
+features.16.conv.1.beta: NO grad
+features.16.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.16.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.16.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.16.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.16.conv.2.weight: NO grad
+features.16.conv.2.gamma: NO grad
+features.16.conv.2.beta: NO grad
+features.16.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.16.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.16.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.16.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.17.conv.0.weight: NO grad
+features.17.conv.0.gamma: NO grad
+features.17.conv.0.beta: NO grad
+features.17.conv.0.activation_quantizer.quantizer._delta: NO grad
+features.17.conv.0.activation_quantizer.quantizer._zero_float: NO grad
+features.17.conv.0.weight_quantizer.quantizer._delta: NO grad
+features.17.conv.0.weight_quantizer.quantizer._zero_float: NO grad
+features.17.conv.1.weight: NO grad
+features.17.conv.1.gamma: NO grad
+features.17.conv.1.beta: NO grad
+features.17.conv.1.activation_quantizer.quantizer._delta: NO grad
+features.17.conv.1.activation_quantizer.quantizer._zero_float: NO grad
+features.17.conv.1.weight_quantizer.quantizer._delta: NO grad
+features.17.conv.1.weight_quantizer.quantizer._zero_float: NO grad
+features.17.conv.2.weight: NO grad
+features.17.conv.2.gamma: NO grad
+features.17.conv.2.beta: NO grad
+features.17.conv.2.activation_quantizer.quantizer._delta: NO grad
+features.17.conv.2.activation_quantizer.quantizer._zero_float: NO grad
+features.17.conv.2.weight_quantizer.quantizer._delta: NO grad
+features.17.conv.2.weight_quantizer.quantizer._zero_float: NO grad
+features.18.0.weight: NO grad
+features.18.0.gamma: NO grad
+features.18.0.beta: NO grad
+features.18.0.activation_quantizer.quantizer._delta: NO grad
+features.18.0.activation_quantizer.quantizer._zero_float: NO grad
+features.18.0.weight_quantizer.quantizer._delta: NO grad
+features.18.0.weight_quantizer.quantizer._zero_float: NO grad
+classifier.1.weight: NO grad
+classifier.1.bias: NO grad
+classifier.1.activation_quantizer.quantizer._delta: NO grad
+classifier.1.activation_quantizer.quantizer._zero_float: NO grad
+classifier.1.weight_quantizer.quantizer._delta: NO grad
+classifier.1.weight_quantizer.quantizer._zero_float: NO grad
+Running evaluation before training
+Evaluation Results - Epoch: 0  {'top_1_accuracy': 0.2531, 'top_5_accuracy': 0.6262, 'loss': 2.461800390625}
+Starting training
